@@ -521,3 +521,7 @@ func (g *nativeGamepadHID) hatState(hat int) int {
 func (g *nativeGamepadHID) vibrate(duration time.Duration, strongMagnitude float64, weakMagnitude float64) {
 	// TODO: Implement this (#1452)
 }
+
+func (g *nativeGamepadHID) isVibrationAvailable() bool {
+	return false // TODO: Implement vibration (#1452)
+}

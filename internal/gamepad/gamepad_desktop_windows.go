@@ -833,6 +833,10 @@ func (g *nativeGamepadDesktop) vibrate(duration time.Duration, strongMagnitude f
 	})
 }
 
+func (g *nativeGamepadDesktop) isVibrationAvailable() bool {
+	return !g.usesDInput() // TODO: Implement vibration for DirectInput devices (#2014)
+}
+
 func (g *nativeGamepadDesktop) stopVibration() {
 	g.vib = false
 	_ = _XInputSetState(uint32(g.xinputIndex), &_XINPUT_VIBRATION{})

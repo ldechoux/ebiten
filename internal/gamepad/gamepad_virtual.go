@@ -269,6 +269,10 @@ func (g *nativeGamepadVirtual) vibrate(duration time.Duration, strongMagnitude f
 	g.vibrationPending = true
 }
 
+func (g *nativeGamepadVirtual) isVibrationAvailable() bool {
+	return true // vibrations are recorded for the host
+}
+
 // virtualStandardAxisMapping presents a forwarded standard axis value (in -1..1) through the
 // mappingInput contract, where StandardAxisValue reads it back as Value()*2-1.
 type virtualStandardAxisMapping struct {

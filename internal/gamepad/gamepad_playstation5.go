@@ -173,3 +173,7 @@ func (*nativeGamepadImpl) hatState(hat int) int {
 func (g *nativeGamepadImpl) vibrate(duration time.Duration, strongMagnitude float64, weakMagnitude float64) {
 	C.ebitengine_VibrateGamepad(C.int(g.id), C.double(float64(duration)/float64(time.Second)), C.double(strongMagnitude), C.double(weakMagnitude))
 }
+
+func (g *nativeGamepadImpl) isVibrationAvailable() bool {
+	return true
+}

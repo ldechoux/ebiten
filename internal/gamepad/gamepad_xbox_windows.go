@@ -287,3 +287,7 @@ func (n *nativeGamepadXbox) vibrate(duration time.Duration, strongMagnitude floa
 		highFrequency: float32(weakMagnitude),
 	}, 0)
 }
+
+func (n *nativeGamepadXbox) isVibrationAvailable() bool {
+	return n.gameInputDevice != nil
+}
